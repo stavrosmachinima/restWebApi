@@ -1,9 +1,24 @@
-package com.stve.restwebapi;
+package com.stve.restwebapi.entity;
 
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="matchodds")
 public class MatchOdds {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    @Nonnull
     private Integer id;
+    @Nonnull
+    @Column(name = "match_id")
     private Integer match_id;
+    @Nonnull
+    @Column(name = "specifier")
     private Character specifier;
+    @Nonnull
+    @Column(name = "odd")
     private Double odd;
 
     public Integer getId() {
@@ -38,20 +53,4 @@ public class MatchOdds {
         this.odd = odd;
     }
 
-    @Override
-    public String toString() {
-        return "MatchOdds{" +
-                "id=" + id +
-                ", match_id=" + match_id +
-                ", specifier=" + specifier +
-                ", odd=" + odd +
-                '}';
-    }
-
-    public MatchOdds(Integer id, Integer match_id, Character specifier, Double odd) {
-        this.id = id;
-        this.match_id = match_id;
-        this.specifier = specifier;
-        this.odd = odd;
-    }
 }

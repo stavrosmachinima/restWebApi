@@ -1,19 +1,38 @@
-package com.stve.restwebapi;
+package com.stve.restwebapi.entity;
+
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+@Entity
+@Table(name="game")
 public class Match {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    @Nonnull
     private Integer id;
+    @Nonnull
+    @Column(name = "DESCRIPTION")
     private String description;
+    @Nonnull
+    @Column(name = "MATCH_DATE")
     private LocalDate match_date;
+    @Nonnull
+    @Column(name = "MATCH_TIME")
     private LocalTime match_time;
+    @Nonnull
+    @Column(name="TEAM_A")
     private String team_a;
+    @Nonnull
+    @Column(name="TEAM_B")
     private String team_b;
-    private enum sport{
-        FOOTBALL,
-        BASKETBALL
-    }
+    @Nonnull
+    @Enumerated(EnumType.ORDINAL)
+    @Column(name="Sport")
+    private Sport sport;
 
     public Integer getId() {
         return id;
@@ -63,28 +82,11 @@ public class Match {
         this.team_b = team_b;
     }
 
-    @Override
-    public String toString() {
-        return "Match{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
-                ", match_date=" + match_date +
-                ", match_time=" + match_time +
-                ", team_a='" + team_a + '\'' +
-                ", team_b='" + team_b + '\'' +
-                '}';
+    public Sport getSport() {
+        return sport;
     }
 
-    public Match(){
-
-    }
-
-    public Match(Integer id, String description, LocalDate match_date, LocalTime match_time, String team_a, String team_b) {
-        this.id = id;
-        this.description = description;
-        this.match_date = match_date;
-        this.match_time = match_time;
-        this.team_a = team_a;
-        this.team_b = team_b;
+    public void setSport(Sport sport) {
+        this.sport = sport;
     }
 }
