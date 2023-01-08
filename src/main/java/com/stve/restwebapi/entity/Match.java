@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Set;
 
 @Entity
 @Table(name="game")
@@ -33,6 +34,33 @@ public class Match {
     @Enumerated(EnumType.ORDINAL)
     @Column(name="Sport")
     private Sport sport;
+
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "match",cascade = CascadeType.ALL)
+    private Set<MatchOdds> matchOdds;
+
+    public Match(){
+        super();
+    }
+
+    public Match(Integer id, String description, LocalDate match_date, LocalTime match_time, String team_a, String team_b, Sport sport, Set<MatchOdds> matchOdds) {
+        super();
+        this.id = id;
+        this.description = description;
+        this.match_date = match_date;
+        this.match_time = match_time;
+        this.team_a = team_a;
+        this.team_b = team_b;
+        this.sport = sport;
+        this.matchOdds = matchOdds;
+    }
+
+    public Set<MatchOdds> getMatchOdds() {
+        return matchOdds;
+    }
+
+    public void setMatchOdds(Set<MatchOdds> matchOdds) {
+        this.matchOdds = matchOdds;
+    }
 
     public Integer getId() {
         return id;

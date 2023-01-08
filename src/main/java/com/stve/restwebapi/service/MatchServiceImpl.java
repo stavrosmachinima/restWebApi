@@ -21,6 +21,7 @@ public class MatchServiceImpl implements MatchService{
 
     @Override
     public List<Match> fetchMatchList(){
+        System.out.println("Fetching Match List");
         return matchRepository.findAll();
     }
 

@@ -21,6 +21,23 @@ public class MatchOdds {
     @Column(name = "odd")
     private Double odd;
 
+    //To load it on-demand (i.e. lazily) when you call the getMatch() method.
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "id",insertable = false,updatable = false) //counter the probability to update id from two places
+    private Match match;
+
+    public MatchOdds(){
+        super();
+    }
+    public MatchOdds(Integer id, Integer match_id, Character specifier, Double odd, Match match) {
+        super();
+        this.id = id;
+        this.match_id = match_id;
+        this.specifier = specifier;
+        this.odd = odd;
+        this.match = match;
+    }
+
     public Integer getId() {
         return id;
     }

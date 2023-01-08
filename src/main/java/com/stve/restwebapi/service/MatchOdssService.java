@@ -1,6 +1,5 @@
 package com.stve.restwebapi.service;
 
-import com.stve.restwebapi.entity.Match;
 import com.stve.restwebapi.entity.MatchOdds;
 
 import java.util.List;

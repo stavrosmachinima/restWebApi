@@ -6,6 +6,7 @@ import com.stve.restwebapi.service.MatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -44,6 +45,7 @@ public class MyController {
     @GetMapping( "/matches")
     public List<Match> getMatches(){
         System.out.println("Searching for all matches");
+        Date date=new Date();
         return matchService.fetchMatchList();
     }
 
