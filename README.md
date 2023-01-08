@@ -6,9 +6,9 @@
 
 **Design Considerations**:
 
-    - **Assumptions and Dependencies**: Duplication of same Match or MatchOdds with different id. Foreign Key of Match and MatchOdds. JPA, Web, PostgreSQL
-    - **Goals and Guidelines**: Functional Web service for managing Match and MatchOdds. Have to use RestAPI and postgreSQL for a database.
-    - **Development Methods**: Java Spring Boot.
+    - Assumptions and Dependencies: Duplication of same Match or MatchOdds with different id. Foreign Key of Match and MatchOdds. JPA, Web, PostgreSQL
+    - Goals and Guidelines: Functional Web service for managing Match and MatchOdds. Have to use RestAPI and postgreSQL for a database.
+    - Development Methods: Java Spring Boot.
     
 **Architectural Strategies**: RestAPI Web application.
 
