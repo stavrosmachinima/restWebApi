@@ -11,8 +11,11 @@
     - Development Methods: Java Spring Boot.
     
 ### Architectural Strategies: RestAPI Web application.
+
 System Architecture: The RestController used one Service and its implementation for managing each Entity. Each entity has its own Repository accessed with JPA for db access.
+
 Policies and Tactics: I used an interface and then implemented it (DAO) for each class to access and CRUD the mentioned table. Could have been without it.
+
 Detailed System Design: Each service's implementation does all the bullwork for using each repository and checking if any value given is null when updating.
 
 Glossary:
