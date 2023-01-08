@@ -45,7 +45,6 @@ public class MyController {
     @GetMapping( "/matches")
     public List<Match> getMatches(){
         System.out.println("Searching for all matches");
-        Date date=new Date();
         return matchService.fetchMatchList();
     }
 
