@@ -1,6 +1,6 @@
 # Title: Administer matches and their odds
 
-## Introduction: This is a REST Web API application developed in Java Spring Boot, whose goal is to help the user to CRUD all of the matches and their odds they may have in a betting game.
+## Introduction: This is a REST Web API application developed in Java Spring Boot, whose goal is to help the user to CRUD matches and the odds they may have in a betting game.
 
 **System Overview**: CRUD Match and MatchOdds by use of HTTP Verbs.
 
