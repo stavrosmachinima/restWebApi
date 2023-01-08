@@ -5,8 +5,6 @@ import com.stve.restwebapi.service.MatchOdssService;
 import com.stve.restwebapi.service.MatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Date;
 import java.util.List;
 
 @RestController
