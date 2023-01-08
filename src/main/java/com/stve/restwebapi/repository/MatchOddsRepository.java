@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MatchOddRepository extends JpaRepository<MatchOdds,Integer> {
+public interface MatchOddsRepository extends JpaRepository<MatchOdds,Integer> {
 
 }

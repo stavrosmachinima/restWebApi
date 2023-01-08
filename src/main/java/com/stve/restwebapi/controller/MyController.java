@@ -36,7 +36,7 @@ public class MyController {
     @DeleteMapping("matchesOdds/{id}")
     public String deleteMatchOddsById(@PathVariable("id") Integer matchId)
     {
-        matchOdssService.deleteMatchById(matchId);
+        matchOdssService.deleteMatchOddsById(matchId);
         return "Deleted "+matchId;
     }
 

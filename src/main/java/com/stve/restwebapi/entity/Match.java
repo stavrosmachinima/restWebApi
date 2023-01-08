@@ -35,7 +35,7 @@ public class Match {
     @Column(name="Sport")
     private Sport sport;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "match",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "match")
     private Set<MatchOdds> matchOdds;
 
     public Match(){

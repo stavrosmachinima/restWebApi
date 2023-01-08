@@ -11,5 +11,5 @@ public interface MatchOdssService {
 
     MatchOdds updateMatchOdds(MatchOdds matchOdds,Integer id);
 
-    void deleteMatchById(Integer id);
+    void deleteMatchOddsById(Integer id);
 }

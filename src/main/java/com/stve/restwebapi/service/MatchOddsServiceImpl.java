@@ -1,7 +1,7 @@
 package com.stve.restwebapi.service;
 
 import com.stve.restwebapi.entity.MatchOdds;
-import com.stve.restwebapi.repository.MatchOddRepository;
+import com.stve.restwebapi.repository.MatchOddsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.Objects;
 public class MatchOddsServiceImpl implements MatchOdssService {
 
     @Autowired
-    private MatchOddRepository matchOddsRepository;
+    private MatchOddsRepository matchOddsRepository;
 
     @Override
     public MatchOdds saveMatchOdds(MatchOdds matchOdds){
@@ -25,8 +25,8 @@ public class MatchOddsServiceImpl implements MatchOdssService {
     }
 
     @Override
-    public MatchOdds updateMatchOdds(MatchOdds matchOdds,Integer matchId){
-        MatchOdds matchOddsDB=matchOddsRepository.findById(matchId).get();
+    public MatchOdds updateMatchOdds(MatchOdds matchOdds,Integer matchOddsId){
+        MatchOdds matchOddsDB=matchOddsRepository.findById(matchOddsId).get();
 
         if (Objects.nonNull(matchOdds.getOdd()))
         {
@@ -45,7 +45,7 @@ public class MatchOddsServiceImpl implements MatchOdssService {
     }
 
     @Override
-    public void deleteMatchById(Integer matchOddsId){
+    public void deleteMatchOddsById(Integer matchOddsId){
         matchOddsRepository.deleteById(matchOddsId);
     }
 }
