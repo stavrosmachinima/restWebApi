@@ -20,4 +20,5 @@
 
 **Glossary**:
 	CRUD: Create, read, update and delete
+	
 	DAO: Data Access Object
