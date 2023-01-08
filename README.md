@@ -19,6 +19,7 @@
 **Detailed System Design**: Each service's implementation does all the bullwork for using each repository and checking if any value given is null when updating.
 
 **Glossary**:
+
 	CRUD: Create, read, update and delete
 	
 	DAO: Data Access Object
