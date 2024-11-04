@@ -8,7 +8,7 @@ import java.time.LocalTime;
 import java.util.Set;
 
 @Entity
-@Table(name="game")
+@Table(name="match")
 public class Match {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

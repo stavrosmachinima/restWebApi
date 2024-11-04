@@ -4,9 +4,12 @@ import com.stve.restwebapi.entity.MatchOdds;
 import com.stve.restwebapi.repository.MatchOddsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class MatchOddsServiceImpl implements MatchOdssService {
@@ -25,8 +28,14 @@ public class MatchOddsServiceImpl implements MatchOdssService {
     }
 
     @Override
+    @Transactional
     public MatchOdds updateMatchOdds(MatchOdds matchOdds,Integer matchOddsId){
-        MatchOdds matchOddsDB=matchOddsRepository.findById(matchOddsId).get();
+        Optional<MatchOdds> optionalMatchOdds=matchOddsRepository.findById(matchOddsId);
+
+        if (optionalMatchOdds.isEmpty())
+            throw new NoSuchElementException("Match not found with id: "+matchOddsId);
+
+        MatchOdds matchOddsDB=optionalMatchOdds.get();
 
         if (Objects.nonNull(matchOdds.getOdd()))
         {
